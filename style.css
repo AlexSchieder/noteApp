@@ -1,0 +1,111 @@
+:root {
+	--shadow-l: 0 4px 6px hsla(0, 0%, 0%, .2);
+	--shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+	box-sizing: border-box;
+	font-family: monospace;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 1rem;
+}
+
+.note-form.hidden {
+	visibility: hidden;
+	display: none;
+}
+
+.note-form {
+	visibility: visible;
+	display: grid;
+	place-items: center;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+#addNote {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	place-items: center;
+	position: fixed;
+	left: 1rem;
+	top: 1rem;
+}
+
+#saveNoteBtn {
+	display: block;
+	margin-left: auto;
+	margin-top: 1em;
+}
+
+.note-form form {
+	background-color: #FFF5D3;
+	padding: 1rem;
+	box-shadow: var(--shadow-l);
+}
+
+textarea {
+	background: transparent;
+	border: none;
+}
+
+ol li {
+	list-style-type: none;
+	background-color: #FFF5D3;
+	box-shadow: var(--shadow);
+	min-height: 9rem;
+}
+
+ol {
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+	grid-gap: 1.2rem;
+}
+
+.note-header {
+	background-color: #FFECAD;
+	width: 100%;
+	padding: 0.3rem;
+	display: inline-flex;
+	justify-content: flex-end;
+	gap: 0 0.6rem;
+}
+
+.note-body {
+	padding: 1rem;
+	height: calc(100% - 2rem);
+	overflow: auto;
+}
+
+.note-body p {
+	white-space: pre;
+	margin: 0;
+}
+
+#notesWrapper {
+	margin-top: 3em;
+}
+
+.note-header button {
+	height: 2em;
+	width: 2em;
+	display: inline-grid;
+	place-items: center;
+	border: none;
+	background: transparent;
+	border-radius: 0.2em;
+}
+
+button {
+	cursor: pointer;
+}
+
+.note-header button:hover {
+	background: #FFE285;
+}
